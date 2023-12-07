@@ -1,0 +1,17 @@
+.carte {
+    border: 2px solid #000; /* Couleur et épaisseur de la bordure */
+    border-radius: 8px; /* Rayon de la bordure arrondie */
+    padding: 10px; /* Espacement à l'intérieur de la bordure (facultatif) */
+    width: 600px;
+    height: 200px;
+    display: flex;  /* Utilise la disposition flexible (Flexbox) */
+    flex-direction: row;        
+}
+
+.carte img{
+    width: 190px;
+    height: 190px;
+    margin-right: 10px;
+}
+
+
