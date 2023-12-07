@@ -18,6 +18,7 @@ class CartesDeSavoir extends HTMLElement
         this._lien = lien;
         this._veracite = veracite;
         this._choixCorrection = choixCorrection;
+        this.afficher();
 
     }
     // ENCAPSULATION
@@ -72,6 +73,51 @@ class CartesDeSavoir extends HTMLElement
     // METHODES
 
     afficher(){
+        let divcontainerCarte = document.createElement("div");
+        divcontainerCarte.className = "carte";
+        this.appendChild(divcontainerCarte);
+
+            let image = document.createElement("img");
+            image.setAttribute("src", this._pathImage);
+            divcontainerCarte.appendChild(image);
+
+            let choixCorrection = document.createElement("h3");
+            choixCorrection.className = "choixCorrection";
+            if (this._choixCorrection == true) {
+                choixCorrection.textContent = "✅";
+            } else {
+                choixCorrection.textContent = "❌";
+            }
+            divcontainerCarte.appendChild(choixCorrection);
+
+            let divcontainerTexte = document.createElement("div");
+            divcontainerTexte.className = "texte";
+            divcontainerCarte.appendChild(divcontainerTexte);
+
+                let titre = document.createElement("h2");
+                titre.textContent = this._titre;
+                divcontainerTexte.appendChild(titre);
+
+                let veracite = document.createElement("h3");
+                veracite.className = "veracite";
+                if (this._veracite == true) {
+                    veracite.textContent = "VRAI";
+                } else {
+                    veracite.textContent = "FAUX";
+                }
+                divcontainerTexte.appendChild(veracite);
+
+                let description = document.createElement("p");
+                description.textContent = this._description;
+                divcontainerTexte.appendChild(description);
+        
+        // Ajout de l'événement
+        this.addEventListener('click', () => {
+            window.location.href = this._lien;
+        });
+                
+
+        /*
         // Création des éléments
         let image = document.createElement("img");
         let titre = document.createElement("h3");
@@ -123,6 +169,7 @@ class CartesDeSavoir extends HTMLElement
 
         // Ajout de la carte au DOM
         //document.getElementById("cartes").appendChild(this);
+        */
     }
 
 } window.customElements.define("carte-savoir", CartesDeSavoir);
