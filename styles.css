@@ -3,14 +3,9 @@
     --CouleurPrimaire: #56A3A6;
     --CouleurSecondaire: #3498db;
     --CouleurTexte: #C0D8E0;
-
-
-    --CouleurAura: 255, 0, 0;
-    /*--CouleurAura: #FF0000;/**/
 }
 .carte {
-    border: 2px solid rgb(var(--CouleurAura)); /* Couleur et épaisseur de la bordure */
-    box-shadow: 0 0 10px rgba(var(--CouleurAura), 0.9);
+    border: 2px solid var(--CouleurAura); /* Couleur et épaisseur de la bordure CouleurAura definit dans le js*/
     border-radius: 8px; /* Rayon de la bordure arrondie */
     padding: 10px; /* Espacement à l'intérieur de la bordure (facultatif) */
     width: 600px;
