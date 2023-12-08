@@ -48,6 +48,29 @@
     max-width: 200px; /* Ajuste la largeur maximale selon ton besoin */
 }
 
+.accueilTexte
+{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+
+}
+
+.containerTexte
+{
+    border: 2px solid rgb(0, 0, 0); /* Couleur et épaisseur de la bordure */
+    box-shadow: 0 0 10px rgba(var(--CouleurBordure), 0.9);
+    border-radius: 8px; /* Rayon de la bordure arrondie */
+    padding: 10px; /* Espacement à l'intérieur de la bordure */
+    border-radius: 8px; /* Rayon de la bordure arrondie */
+    margin-bottom: 10px; /* Espace entre chaque conteneur */
+    margin-top: 10px; /* Espace entre chaque conteneur */
+}
+
+.logoN2I
+{
+    float : right;  
+}
 
 .carte {
     border: 2px solid var(--CouleurAura); /* Couleur et épaisseur de la bordure CouleurAura definit dans le js*/
