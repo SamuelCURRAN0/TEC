@@ -115,3 +115,16 @@ h1
 {
     text-align: center;
 }
+
+button
+{
+    width: 200px; /* Largeur du bouton */
+    height: 100px; /* Hauteur du bouton */
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+div
+{
+    align-content: center;
+}

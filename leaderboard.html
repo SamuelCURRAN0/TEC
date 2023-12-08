@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Leader Board</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
-<script src="leaderboard.js"></script>
 <body>
     <h1 class="titrePage">Fact Balloon</h1>
     <ul class="navbar">
@@ -24,7 +24,11 @@
         </li>
     </ul>
     <h1>Leader Board</h1>
-  
-    
+        
+        <form method="get" action="leaderboard.php">
+            <button type="submit" name="Facile" value="Facile">Facile</button>
+            <button type="submit" name="Moyen" value="Moyen">Moyen</button>
+            <button type="submit" name="Difficile" value="Difficile">Difficile</button>
+        </form>
 </body>
 </html>
