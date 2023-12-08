@@ -1,15 +1,15 @@
 -- Table Partie
 CREATE TABLE Partie (
-    Id INT PRIMARY KEY,
+    id INT PRIMARY KEY,
     dateHeure DATE,
     score INT,
     pseudonyme TEXT,
-    Difficulte INT
+    difficulte INT
 );
 
 -- Table Fait
 CREATE TABLE Fait (
-    Id INT PRIMARY KEY,
+    id INT PRIMARY KEY,
     ideeReçu TEXT,
     reponse TEXT,
     pathImage TEXT,
