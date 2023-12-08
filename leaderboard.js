@@ -1,42 +1,67 @@
 class leaderboard extends HTMLElement 
 {
+     // ATTRIBUTS
+    _isClicked = false;
+
+    // CONSTRUCTEUR
     constructor() {
         super();
-    
-        // Attache une fonction au clic de chaque bouton
-        this.onclick = this.handleButtonClick;
-      }
-    
-      // Fonction pour gérer le clic sur un bouton
-      handleButtonClick(event) {
-        // Réinitialise le style de tous les boutons
-        const buttons = document.querySelectorAll('button');
-        buttons.forEach(button => {
-          button.style.backgroundColor = ''; // Réinitialise la couleur de fond
-        });
-    
-        // Change la couleur de fond du bouton cliqué
-        const clickedButton = event.target;
-        clickedButton.style.backgroundColor = 'darkblue';
-    
-        // Efface les tableaux précédents et affiche le tableau
-        this.displayLeaderboard();
-      }
-    
-      // Fonction pour afficher le tableau
-      displayLeaderboard() {
-        // Supprime les tableaux précédents
-        const existingTables = document.querySelectorAll('table');
-        existingTables.forEach(table => table.remove());
-    
-        // Crée et affiche le tableau
-        const leaderboardTable = document.createElement('table');
-        // Ajoute ici les lignes, colonnes ou tout autre contenu pour votre tableau
-    
-        // Ajoute le tableau à la page
-        this.appendChild(leaderboardTable);
-      }
+        this.createButton();
+        this.addEventListener('click', this.handleClick.bind(this));
     }
-    
-    // Enregistre la classe Leaderboard en tant qu'élément personnalisé
-    customElements.define('leaderboard-element', Leaderboard);
+
+    // ENCAPSULATION
+    get isClicked() {
+        return this._isClicked;
+    }
+
+    set isClicked(value) {
+        this._isClicked = value;
+        this.updateButtonStyle();
+    }
+
+    // METHODES
+    createButton() {
+        let button = document.createElement('button');
+        button.textContent = 'Bouton Non Cliqué';
+        this.appendChild(button);
+    }
+
+    handleClick() {
+        // Désactive les autres boutons
+        const allButtons = document.querySelectorAll('leaderboard');
+        allButtons.forEach(button => {
+            if (button !== this) {
+                button.isClicked = false;
+            }
+        });
+
+        // Efface les tableaux et affiche le scient
+        this.clearTables();
+        this.displayScientificData();
+
+        // Marque le bouton comme cliqué
+        this.isClicked = true;
+    }
+
+    updateButtonStyle() {
+        const button = this.querySelector('button');
+        if (this.isClicked) {
+            // Style lorsque le bouton est cliqué
+            button.style.backgroundColor = '#336699'; // Changez la couleur selon vos besoins
+        } else {
+            // Style lorsque le bouton n'est pas cliqué
+            button.style.backgroundColor = '#6699CC'; // Changez la couleur selon vos besoins
+        }
+    }
+
+    clearTables() {
+        // Code pour effacer les tableaux
+        // Ajoutez votre logique ici
+    }
+
+    displayScientificData() {
+        // Code pour afficher les données scientifiques
+        // Ajoutez votre logique ici
+    }
+}window.customElements.define('leaderboard', leaderboard);

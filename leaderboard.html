@@ -7,15 +7,24 @@
     <link rel="stylesheet" href="styles.css">
     <title>Leader Board</title>
 </head>
+<script src="leaderboard.js"></script>
 <body>
+    <h1 class="titrePage">Fact Balloon</h1>
+    <ul class="navbar">
+        <li><a href="">Jeu</a></li>
+        <li><a href="">Leaderboard</a></li>
+        <li><a href="">Faits</a></li>
+        <li>
+            <select onchange="changeTheme(this.value)">
+                <option value="">Choisir un thème</option>
+                <option value="theme1">Thème 1</option>
+                <option value="theme2">Thème 2</option>
+                <option value="theme3">Thème 3</option>
+            </select>
+        </li>
+    </ul>
     <h1>Leader Board</h1>
-
-    <leaderboard-element></leaderboard-element>
-    
-    <button type="button">Difficulter facile</button>
-    <button type="button">Difficulter moyenne</button>
-    <button type="button">Difficulter difficile</button>
   
-    <script src="leaderboard.js"></script>
+    
 </body>
 </html>
