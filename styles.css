@@ -1,30 +1,50 @@
+:root {
+    --CouleurBordure:#484538;
+    --CouleurPrimaire: #56A3A6;
+    --CouleurSecondaire: #3498db;
+    --CouleurTexte: #C0D8E0;
+
+
+    --CouleurAura: 255, 0, 0;
+    /*--CouleurAura: #FF0000;/**/
+}
 .carte {
-    border: 2px solid #000; /* Couleur et épaisseur de la bordure */
+    border: 2px solid rgb(var(--CouleurAura)); /* Couleur et épaisseur de la bordure */
+    box-shadow: 0 0 10px rgba(var(--CouleurAura), 0.9);
     border-radius: 8px; /* Rayon de la bordure arrondie */
     padding: 10px; /* Espacement à l'intérieur de la bordure (facultatif) */
     width: 600px;
     height: 200px;
     display: flex;  /* Utilise la disposition flexible (Flexbox) */
     flex-direction: row;  
-    background-color: #3498db; /* Bleu vif */
+    background-color: var(--CouleurPrimaire); /* Bleu vif */
     font-family: 'Roboto', sans-serif; /* Police Roboto */
-    color: #ffffff; /* Texte en blanc pour un meilleur contraste */
+    color: var(--CouleurTexte); /* Texte en blanc pour un meilleur contraste */
 }
 
 .carte img{
     width: 195px;
     height: 195px;
     margin-right: 10px;
-    border: 0.5px solid #000; /* Couleur et épaisseur de la bordure */
+    border: 0.5px solid var(--CouleurBordure); /* Couleur et épaisseur de la bordure */
     border-radius: 8px; /* Rayon de la bordure arrondie */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ajoutez une ombre avec une couleur noire semi-transparente */
 }
 
-h2 
+
+h2, h3
 {
     margin: 0;
+    width: auto;
 }
+
 .carte p{
     margin-bottom: 0;
     margin-top: 10px;
+}
+
+.containerTitre
+{
+    display: flex; 
+    justify-content: space-between;
 }
