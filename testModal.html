@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemple de Modal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Contenu principal de la page -->
+    <h1>Page Principale</h1>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <h2>Règles du jeu</h2>
+            <p> <b><u>Objectif</u></b> : Récolter le maximum de points à la fin de la partie.<br><br>
+                <b><u>Fonctionnement</u></b> : Déterminer si la solution proposée pour limiter le changement climatique
+                est vrai ou fausse en la glissant vers la réponse souhaitée. Une bonne réponse équivaut à un point et
+                une mauvaise réponse équivaut à perdre une vie.<br>
+                L’opération se répète jusqu’à la perte de toutes nos vies ou lorsque tous les faits ont été
+                traités.<br><br>
+                <b><u>Temps limité</u></b> : Le joueur a un temps limité pour répondre à chaque proposition. Si ce temps
+                est dépassé, alors le joueur perd une vie. Au fil de la partie, le temps limite va diminuer
+                progressivement afin de corser le jeu. <br><br>
+            </p>
+            <p><b><u>Difficulté</u></b> : Le choix de la difficulté permet de définir un temps de réponse au début de la
+                partie :<br></p>
+            <ul>
+                <li>Facile : 10 secondes</li>
+                <li>Moyenne : 7 secondes</li>
+                <li>Difficile : 5 secondes</li>
+            </ul>
+            <p><b><u>Montgolfière dorée</u></b> : Durant la partie, il y a un pourcentage de chance qu’une montgolfière
+                dorée apparaisse. Lorsque cela se produit, une bonne réponse équivaut alors à deux points et une
+                mauvaise réponse équivaut à perdre deux vies.</p>
+
+            <div class="modal-navigation">
+                <a href="#" class="prev-button hidden">Précédent</a>
+                <a href="#" class="next-button">Suivant</a>
+            </div>
+        </div>
+        <div class="modal-content hidden">
+            <h2>Choix de la difficulté de la partie</h2>
+            <form id="difficultyForm">
+                <label>
+                    <input type="radio" name="difficulte" value="1">
+                    Facile
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="difficulte" value="2">
+                    Moyenne
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="difficulte" value="3">
+                    Difficile
+                </label>
+                <input class="jouer-button" type="SUBMIT" name="Jouer" value="Jouer">
+            </form>
+            <div class="modal-navigation">
+                <a href="#" class="prev-button">Précédent</a>
+                <a href="#" class="next-button">Suivant</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Autre contenu de la page -->
+    <p>Autre contenu de la page principale...</p>
+
+    <script>
+        var modal = document.getElementById('myModal');
+        var modalContents = document.querySelectorAll('.modal-content');
+        var closeButtons = document.querySelectorAll('.close');
+        var prevButtons = document.querySelectorAll('.prev-button');
+        var nextButtons = document.querySelectorAll('.next-button');
+        var currentIndex = 0;
+
+        window.onload = function () {
+            modal.classList.add('show');
+            showContent(currentIndex);
+        }
+
+        closeButtons.forEach(function (button) {
+            button.onclick = function () {
+                modal.classList.remove('show');
+            }
+        });
+
+        prevButtons.forEach(function (button) {
+            button.onclick = function () {
+                currentIndex--;
+                showContent(currentIndex);
+            }
+        });
+
+        nextButtons.forEach(function (button) {
+            button.onclick = function () {
+                currentIndex++;
+                showContent(currentIndex);
+            }
+        });
+
+        function showContent(index) {
+            modalContents.forEach(function (content, contentIndex) {
+                if (contentIndex === index) {
+                    content.classList.remove('hidden');
+                } else {
+                    content.classList.add('hidden');
+                }
+            });
+
+            if (index === 0) {
+                prevButtons.forEach(function (button) {
+                    button.classList.add('hidden');
+                });
+            } else {
+                prevButtons.forEach(function (button) {
+                    button.classList.remove('hidden');
+                });
+            }
+
+            if (index === modalContents.length - 1) {
+                nextButtons.forEach(function (button) {
+                    button.classList.add('hidden');
+                });
+            } else {
+                nextButtons.forEach(function (button) {
+                    button.classList.remove('hidden');
+                });
+            }
+        }
+
+        // Gestionnaire d'événement pour le formulaire de sélection de difficulté
+        var form = document.getElementById('difficultyForm');
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            closeModal();
+        });
+
+        // Fonction pour fermer le modal
+        function closeModal() {
+            modal.classList.remove('show');
+        }
+
+    </script>
+</body>
+
+</html>
