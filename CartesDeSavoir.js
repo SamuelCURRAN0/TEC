@@ -97,8 +97,10 @@ class CartesDeSavoir extends HTMLElement
                     containerTitre.appendChild(choixCorrection);
                     if (this._choixCorrection == true) {
                         choixCorrection.textContent = "✅";
+                        divcontainerCarte.style.setProperty('--CouleurAura', '#00ff00');
                     } else {
                         choixCorrection.textContent = "❌";
+                        divcontainerCarte.style.setProperty('--CouleurAura', '#ff0000');
                     }
 
                 let veracite = document.createElement("h3");

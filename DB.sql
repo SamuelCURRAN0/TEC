@@ -1,8 +1,3 @@
-CREATE TABLE Utilisateur (
-    Pseudonyme TEXT PRIMARY KEY,
-    passHash TEXT
-);
-
 -- Table Partie
 CREATE TABLE Partie (
     Id INT PRIMARY KEY,
@@ -10,7 +5,6 @@ CREATE TABLE Partie (
     score INT,
     pseudonyme TEXT,
     Difficulte INT,
-    FOREIGN KEY (pseudonyme) REFERENCES Utilisateur(Pseudonyme)
 );
 
 -- Table Fait

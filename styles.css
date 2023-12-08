@@ -3,14 +3,54 @@
     --CouleurPrimaire: #56A3A6;
     --CouleurSecondaire: #3498db;
     --CouleurTexte: #C0D8E0;
-
-
-    --CouleurAura: 255, 0, 0;
-    /*--CouleurAura: #FF0000;/**/
 }
+
+.titrePage
+{
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+/* Réinitialisation des marges et des paddings pour la liste */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+}
+
+/* Styles pour chaque élément de la barre de navigation */
+.navbar li {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.navbar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 14px 16px;
+}
+
+/* Dropdown pour les thèmes */
+.dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1; /* Pour occuper l'espace restant et centrer */
+}
+.dropdown select {
+    max-width: 200px; /* Ajuste la largeur maximale selon ton besoin */
+}
+
+
 .carte {
-    border: 2px solid rgb(var(--CouleurAura)); /* Couleur et épaisseur de la bordure */
-    box-shadow: 0 0 10px rgba(var(--CouleurAura), 0.9);
+    border: 2px solid var(--CouleurAura); /* Couleur et épaisseur de la bordure CouleurAura definit dans le js*/
     border-radius: 8px; /* Rayon de la bordure arrondie */
     padding: 10px; /* Espacement à l'intérieur de la bordure (facultatif) */
     width: 600px;

@@ -1,12 +1,26 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fact Balloon</title>
-</head>
-<body>
-    
-</body>
-</html>
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Fact Balloon</title>
+    </head>
+    <body>
+        <h1 class="titrePage">Fact Balloon</h1>
+        <ul class="navbar">
+            <li><a href="">Jeu</a></li>
+            <li><a href="">Leaderboard</a></li>
+            <li><a href="">Faits</a></li>
+            <li>
+                <select onchange="changeTheme(this.value)">
+                    <option value="">Choisir un thème</option>
+                    <option value="theme1">Thème 1</option>
+                    <option value="theme2">Thème 2</option>
+                    <option value="theme3">Thème 3</option>
+                </select>
+            </li>
+        </ul>
+    </body>
+    </html>
